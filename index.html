@@ -173,16 +173,32 @@
         display: flex;
       }
     }
-  </style>
+    /* Group hamburger + logo on the left */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}
+</style>
 </head>
 <body>
 
 <nav class="navbar">
-  <a href="index.html" class="nav-logo">Dowdle Trace</a>
-
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    ☰
-  </button>
+  <div class="nav-left">
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <a href="index.html" class="nav-logo">Dowdle Trace</a>
+  </div>
 
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -191,8 +207,8 @@
     <li><a href="community.html">Our community</a></li>
     <li><a href="documents.html">HOA documents</a></li>
   </ul>
-    <a href="mailto:dowdletrace@gmail.com" class="nav-cta">Request access</a>
-  </nav>
+</nav>
+
 
   <div class="hero">
     <div class="hero-photo"></div>
