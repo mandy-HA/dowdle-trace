@@ -205,6 +205,29 @@
     display: none;
   }
 }
+/* Desktop: center the links */
+@media (min-width: 701px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center everything */
+    position: relative;
+  }
+
+  .nav-left {
+    position: absolute;
+    left: 20px; /* keeps logo on the left */
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
