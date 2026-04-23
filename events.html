@@ -142,7 +142,45 @@
       .flyer-card img { max-height: 260px; }
       .flyer-card-body { padding: 20px; }
     }
-  </style>
+    .flyer-thumb {
+  max-width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.flyer-thumb:hover {
+  opacity: 0.8;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
 
@@ -177,7 +215,9 @@
     <!-- ── FLYER CARD EXAMPLE — Ladies' Lunch ── -->
     <!-- To use this style: save your flyer image to the same folder, update the src below, and fill in the details -->
     <div class="flyer-card fade-up">
-      <img src="images/events/a-porch-evening-may-2026.jpeg" alt="A Porch Evening flyer" />
+      <img src="images/events/a-porch-evening-may-2026.jpeg" alt="A Porch Evening flyer"
+      alt="A Porch Evening flyer" 
+     class="flyer-thumb" />
       <div class="flyer-card-body">
         <div class="section-label">Social event</div>
         <h3>A Porch Evening</h3>
@@ -294,5 +334,9 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
   <script src="nav.js"></script>
+  <div id="flyer-modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="flyer-full">
+</div>
 </body>
 </html>
