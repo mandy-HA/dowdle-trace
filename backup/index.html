@@ -129,68 +129,19 @@
       .two-col { grid-template-columns: 1fr; }
       .access-banner { margin: 0 20px 32px; }
     }
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-toggle {
-      display: none;
-      font-size: 28px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 700px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background: white;
-        padding: 10px;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-    }
   </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">Dowdle Trace</a>
-
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    ☰
-  </button>
-
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="announcements.html">Announcements</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="community.html">Our community</a></li>
-    <li><a href="documents.html">HOA documents</a></li>
-  </ul>
+  <nav>
+    <a href="index.html" class="nav-logo">Dowdle Trace</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="announcements.html">Announcements</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="community.html">Our community</a></li>
+      <li><a href="documents.html">HOA documents</a></li>
+    </ul>
     <a href="mailto:dowdletrace@gmail.com" class="nav-cta">Request access</a>
   </nav>
 
@@ -314,10 +265,5 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
-  <script>
-  document.querySelector('.nav-toggle').onclick = () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-  };
-</script>
 </body>
 </html>
