@@ -74,6 +74,73 @@
     .past-item .past-date { font-size: 12px; color: var(--gray-500); min-width: 80px; }
     .past-item .past-name { font-size: 14px; font-weight: 500; color: var(--gray-900); }
     .past-item .past-tag { margin-left: auto; }
+
+    /* ── FLYER CARD ── */
+    .flyer-card {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 0;
+      background: var(--gray-50);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      transition: transform 0.2s;
+    }
+    .flyer-card:hover { transform: translateY(-2px); }
+    .flyer-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .flyer-card-body {
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .flyer-card-body .section-label { margin-bottom: 6px; }
+    .flyer-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--gray-900);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .flyer-card-body .event-meta { margin-bottom: 14px; }
+    .flyer-card-body p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .flyer-card-body .event-rsvp { align-self: flex-start; }
+
+    /* image-only flyer option */
+    .flyer-image-only {
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .flyer-image-only:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .flyer-image-only img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .flyer-card { grid-template-columns: 1fr; }
+      .flyer-card img { max-height: 260px; }
+      .flyer-card-body { padding: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -105,7 +172,34 @@
     <div class="section-label">Coming up</div>
     <div class="section-title" style="margin-bottom:24px;">Upcoming events</div>
 
-    <div class="events-grid">
+    <!-- ── FLYER CARD EXAMPLE — Ladies' Lunch ── -->
+    <!-- To use this style: save your flyer image to the same folder, update the src below, and fill in the details -->
+    <div class="flyer-card fade-up">
+      <img src="ladies-lunch-flyer.jpg" alt="Ladies' Lunch flyer" />
+      <div class="flyer-card-body">
+        <div class="section-label">Social event</div>
+        <h3>Ladies' Lunch at Cupboard Cafe &amp; Gifts</h3>
+        <div class="event-meta">
+          <div class="event-meta-row">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#6b7280" stroke-width="1.4"/><path d="M10 6v4l2.5 2.5" stroke="#6b7280" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Wednesday, March 25th at 11:30 AM
+          </div>
+          <div class="event-meta-row">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5z" stroke="#6b7280" stroke-width="1.4"/><circle cx="10" cy="7" r="1.5" stroke="#6b7280" stroke-width="1.4"/></svg>
+            7388 Hwy 441, Dillard, GA &mdash; 19 min from Dowdle Trace
+          </div>
+          <div class="event-meta-row">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="#6b7280" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Carpooling available &mdash; contact Abby &amp; Pam
+          </div>
+        </div>
+        <p>Join us for friendship, good food and shopping at this adorable cafe and gift shop. RSVP requested so we can plan ahead.</p>
+        <a href="mailto:dowdletrace@gmail.com?subject=RSVP: Ladies Lunch March 25" class="event-rsvp">RSVP by email</a>
+      </div>
+    </div>
+
+    <!-- ── REGULAR EVENT CARDS ── -->
+    <div class="events-grid" style="margin-top:16px;">
 
       <div class="event-card fade-up">
         <div class="event-card-top">
